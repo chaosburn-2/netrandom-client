@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.String?>
+<?import javafx.collections.FXCollections?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Spinner?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.layout.VBox?>
+
+<BorderPane xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.chaostek.netrandomclient.PrimaryController">
+   <left>
+      <VBox prefHeight="200.0" prefWidth="150.0" BorderPane.alignment="CENTER">
+         <children>
+            <Button fx:id="cmd1D4" maxWidth="1.7976931348623157E308" mnemonicParsing="false" text="1 D 4" onAction="#cmdRollD4" />
+            <Button fx:id="cmd1D6" maxWidth="1.7976931348623157E308" mnemonicParsing="false" text="1 D 6" onAction="#cmdRollD6" />
+            <Button fx:id="cmd1D8" maxWidth="1.7976931348623157E308" mnemonicParsing="false" text="1 D 8" onAction="#cmdRollD8" />
+            <Button fx:id="cmd1D10" maxWidth="1.7976931348623157E308" mnemonicParsing="false" text="1 D 10" onAction="#cmdRollD10" />
+            <Button fx:id="cmd1D12" maxWidth="1.7976931348623157E308" mnemonicParsing="false" text="1 D 12" onAction="#cmdRollD12" />
+            <Button fx:id="cmd1D20" maxWidth="1.7976931348623157E308" mnemonicParsing="false" text="1 D 20" onAction="#cmdRollD20" />
+            <HBox />
+            <GridPane>
+              <columnConstraints>
+                <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+              </columnConstraints>
+              <rowConstraints>
+                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+              </rowConstraints>
+               <children>
+                  <Spinner fx:id="spnQuantity" maxWidth="1.7976931348623157E308" />
+                  <ComboBox fx:id="cboDie" maxWidth="1.7976931348623157E308" value="D 4" GridPane.columnIndex="1">
+					<items>
+						<FXCollections fx:factory="observableArrayList">
+							<String fx:value="D 4" />
+							<String fx:value="D 6" />
+							<String fx:value="D 8" />
+							<String fx:value="D 10" />
+							<String fx:value="D 12" />
+							<String fx:value="D 20" />
+						</FXCollections>
+					</items>
+				  </ComboBox>
+                  <Button fx:id="cmdRoll" maxWidth="1.7976931348623157E308" mnemonicParsing="false" prefHeight="26.0" prefWidth="107.0" text="Roll" GridPane.columnSpan="2" GridPane.rowIndex="1" onAction="#cmdRoll" />
+               </children>
+            </GridPane>
+			<Button fx:id="cmdClear" maxWidth="1.7976931348623157E308" mnemonicParsing="false" prefHeight="26.0" prefWidth="107.0" text="Clear" onAction="#cmdClear" />
+         </children>
+      </VBox>
+   </left>
+   <center>
+      <TableView fx:id="tblResponses" maxHeight="1.7976931348623157E308" BorderPane.alignment="CENTER">
+        <columns>
+          <TableColumn fx:id="colRequest" minWidth="100.0" prefWidth="-1.0" text="Request" />
+          <TableColumn fx:id="colResponse" minWidth="100.0" prefWidth="-1.0" text="Response" />
+        </columns>
+      </TableView>
+   </center>
+</BorderPane>
